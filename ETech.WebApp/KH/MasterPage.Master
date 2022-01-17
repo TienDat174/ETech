@@ -1,0 +1,166 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="ETech.WebApp.KH.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../wwwroot/font-awsome/css/all.css">
+    <link rel="stylesheet" href="../wwwroot/css/kh_masterpage.css">
+    <title>ETech Shop</title>
+     <style>
+        .menu-child-link {
+            margin-left: 0 !important;
+        }
+        .menu-link:hover{
+            color: #3e67b9;
+            transition: 0.25s;
+        }
+        form{
+            overflow:hidden;
+        }
+        .search-box{
+           
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="MP__container">
+            <div class="MP__header1">
+                <div class="MP__header-logo">
+                    <a href="TrangChu.aspx">
+                        <img src="../wwwroot/img/icon/logo_text.png" alt="LOGO"></a>
+                </div>
+                <div class="MP__header-search">
+
+                    <asp:TextBox ID="txtsr" runat="server" CssClass="form-control search-box" placeholder=" Tìm kiếm..."></asp:TextBox>
+
+                    <asp:LinkButton ID="LinkButton1" CssClass="btn" runat="server" OnClick="LinkButton1_Click"><i class="fas fa-search" style="color: #000"></i></asp:LinkButton>
+                </div>
+
+                <div class="MP__header-items">
+                    <a href="GioHang.aspx"><i class="fas fa-shopping-cart fa-2x" style="color: #3e67b9"></i></a>
+                    <div class="MP__giohang">
+                        <div class="cart-wrapper" style="height: 20px; margin-top: 8px; width: 45px; background-color: #555; border-radius: 10%; background-color: #3e67b9; padding-top: 1px">
+                            <asp:Label ID="lbSL" runat="server" Text="0"></asp:Label>
+                        </div>
+                        <p>Cart</p>
+                    </div>
+                    <a href="#"><i class="far fa-user fa-2x fa-fw"></i></a>
+
+                    <asp:Panel ID="panelUser" runat="server">
+                        <li class="menu-item has-child MP__header-item" style="margin-left: 0!important">
+                            <a href="#" class="menu-link">
+                                <p>
+                                    <asp:Label ID="lbTaiKhoan" runat="server" Text=""></asp:Label></p>
+                                <i class="fa fa-angle-down fa-fw"></i>
+                            </a>
+                            <ul class="menu-child">
+                                <li class="menu-child-item">
+                                    <asp:HyperLink ID="HyperLink1" CssClass="menu-child-link" runat="server">Quản lý tài khoản</asp:HyperLink>
+                                </li>
+                                <li class="menu-child-item">
+                                    <asp:HyperLink ID="HyperLink2" CssClass="menu-child-link" runat="server">Đổi mật khẩu</asp:HyperLink>
+                                </li>
+                                <li class="menu-child-item">
+                                    <asp:LinkButton ID="LinkButton2" CssClass="menu-child-link" runat="server" OnClick="LinkButton2_Click">Đăng xuất<i class="fas fa-sign-out-alt"
+                                    style="margin-left: 5px;"></i></asp:LinkButton>
+                                </li>
+                            </ul>
+                        </li>
+                    </asp:Panel>
+
+                    <asp:Panel ID="panelDangNhap" runat="server">
+                        <div class="MP__header-item">
+                            <a href="TrangDangKyDangNhapKH.aspx">Đăng Ký</a>
+                            <a href="TrangDangKyDangNhapKH.aspx">Đăng Nhập</a>
+                        </div>
+                    </asp:Panel>
+                </div>
+            </div>
+            
+            <div class="MP__header2">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="TrangChu.aspx" class="menu-link">TRANG CHỦ</a>
+                    </li>
+                    <li class="menu-item has-child">
+                        <a href="#" class="menu-link">
+                            <span>DANH MỤC SẢN PHẨM</span>
+                            <i class="fa fa-angle-down fa-fw"></i>
+                        </a>
+                        <ul class="menu-child">
+                            <asp:Repeater ID="Repeater1" runat="server">
+                                <ItemTemplate>
+                                    <li class="menu-child-item">
+                                        <a class="menu-child-link" href="SPTHEODANHMUC.aspx?idDM=<%# Eval("LOAISPID") %>"><%# Eval("TENLOAI") %></a>
+                                    </li>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="DonHang.aspx" class="menu-link">ĐƠN HÀNG</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">TIN TỨC</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer class="MP__footer" style="margin-top: 20%!important;">
+            <div class="MP__footer-1">
+                <div class="MP__footer-1-item1">ETECH SHOP</div>
+                <div class="MP__footer-1-item2">
+                    <p><i class="fas fa-map-marker-alt fa-fw"></i>03 Quang Trung, Hải Châu, Đà Nẵng</p>
+                    <p><i class="fas fa-map-marker-alt fa-fw"></i>222 Nguyễn Văn Linh</p>
+                    <p><i class="fas fa-map-marker-alt fa-fw"></i>607 - 609 Lê Hồng Phong, p10, Quận 10, HCM</p>
+                    <p><i class="fas fa-map-marker-alt fa-fw"></i>315 Đỗ Xuân Hợp, Phường Phước Long, Quận 9</p>
+                    <p><i class="fas fa-map-marker-alt fa-fw"></i>97 Võ Văn Ngân, P.Linh Chiểu, Quận Thủ Đức, HCM</p>
+                </div>
+            </div>
+
+            <div class="MP__footer-2">
+                <div class="MP__footer-2-item1">
+                    <div>
+                        <i class="fab fa-facebook-f fa-2x fa-fw"></i>
+                        <i class="fas fa-phone-alt fa-2x fa-fw"></i>
+                        <i class="fas fa-envelope fa-2x fa-fw"></i>
+                    </div>
+                    <div>
+                        <h3>WEBSITE CÔNG NGHỆ ETECH</h3>
+                    </div>
+                    <div>
+                        <p>Gọi mua hàng: 1800.1060(7:30-22:00)</p>
+                        <p>Gọi khiếu nại: 1800.1080(7:30-22:00)</p>
+                        <p>Gọi bảo hành: 1800.1180(7:30-22:00)</p>
+                    </div>
+                </div>
+                <div class="MP__footer-2-item2">
+                    <p>Copyright by ETech.Com - ETECH.com</p>
+                </div>
+            </div>
+        </footer>
+
+
+    </form>
+</body>
+</html>

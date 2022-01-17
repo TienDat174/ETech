@@ -1,0 +1,109 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="ETech.WebApp.ADMIN.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+      <title>Master Page</title>
+      <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../wwwroot/font-awsome/css/all.css">
+  <link rel="stylesheet" href="../wwwroot/css/admin.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <img src="../wwwroot/img/icon/logo_text.png" alt="logo" class="logo">
+            
+            <nav class="nav_admin">
+              <li class="menu-item has-child">
+                <div class="header_name-admin">
+                  <h3>Adminstrator</h3>
+                  <p>Adminstrator</p>
+                </div>
+                <a href="#" class="menu-link">
+                  <i class="far fa-user-circle fa-2x" style="font-size:40px"></i>
+                  <i class="fas fa-chevron-down chevron-down fa-xs fa-fw" style="color: #c0c0c0;"></i>
+                </a>
+                <ul class="menu-child">
+                  <li class="menu-child-item">
+                    <a href="#" class="menu-child-link">Quản lý hồ sơ</a>
+                  </li>
+                  <li class="menu-child-item">
+                    <a href="#" class="menu-child-link">Đăng xuất<i class="fas fa-sign-out-alt"
+                        style="margin-left: 5px;"></i></a>
+                  </li>
+                </ul>
+              </li>
+            </nav>
+          </header>
+
+          <div class="side-bar">
+            <h4>TÍNH NĂNG QUẢN TRỊ</h4>
+            <div class="menu-side-bar">
+              <div class="menu-item">
+                <a class="sub-btn">
+                  <i class="fas fa-stream" style="color: #c0c0c0"></i>Tài khoản
+                  <i class="fas fa-chevron-right side-bar_dropdown"></i>
+                </a>
+                <div class="sub-menu">
+                  <a href="QuanLyAdmin.aspx" class="sub-item">Admin</a>
+                  <div class="menu-item">
+                    <a href="QuanLyNCC.aspx" class="sub-btn">Nhà cung cấp</a>
+                  </div>
+                  <a href="QuanLyNguoiDung.aspx" class="sub-item">Người dùng</a>
+                </div>
+              </div>
+              <div class="menu-item"><a href="QuanLyThongKe.aspx"><i class="fas fa-stream" style="color: #c0c0c0"></i>Thống kê báo cáo</a>
+              </div>
+              <div class="menu-item">
+                <a class="sub-btn">
+                  <i class="fas fa-stream" style="color: #c0c0c0"></i>Danh mục
+                  <i class="fas fa-chevron-right side-bar_dropdown"></i>
+                </a>
+                <div class="sub-menu">
+                  <a href="QuanLyDanhMuc.aspx" class="sub-item">Danh mục chờ duyệt</a>
+                  <a href="" class="sub-item">Danh mục có sẵn</a>
+                  <a href="" class="sub-item">Danh mục đã huỷ</a>
+                </div>
+              </div>
+              <div class="menu-item"><a href="QuanLyThuNhap.aspx"><i class="fas fa-stream" style="color: #c0c0c0"></i>Thu nhập</a></div>
+              <div class="menu-item">
+                <a class="sub-btn">
+                  <i class="fas fa-stream" style="color: #c0c0c0"></i>Đơn vị vận chuyển
+                  <i class="fas fa-chevron-right side-bar_dropdown"></i>
+                </a>
+                <div class="sub-menu">
+                  <a href="QuanLyDVVC.aspx" class="sub-item">ĐVVC chờ duyệt</a>
+                  <a href="#" class="sub-item">ĐVVC có sẵn</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <script type="text/javascript">
+    $(document).ready(function () {
+      $('.sub-btn').click(function () {
+        $(this).next('.sub-menu').slideToggle();
+        $(this).find('.side-bar_dropdown').toggleClass('rotate');
+      });
+    });
+        </script>
+    </form>
+</body>
+</html>

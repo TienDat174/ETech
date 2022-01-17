@@ -1,0 +1,2461 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{10283F96-5DD8-401A-A9ED-6C1D8DF66D93}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ETech.WebApp</RootNamespace>
+    <AssemblyName>ETech.WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44303</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SRVTextToImage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Jennifer\OneDrive\Study\1.Tài liệu CDIO\CDIO TÍCH HỢP\SRVTextToImage.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebApplication2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\WebApplication2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMIN\CaptchaImage.aspx" />
+    <Content Include="ADMIN\DangNhap.aspx" />
+    <Content Include="ADMIN\QuanLiCapNhatDanhMuc.aspx" />
+    <Content Include="ADMIN\QuanLyAdmin.aspx" />
+    <Content Include="ADMIN\QuanLyAdminChiTiet.aspx" />
+    <Content Include="ADMIN\QuanLyCapNhatDVVC.aspx" />
+    <Content Include="ADMIN\QuanLyChiTietDanhMuc1.aspx" />
+    <Content Include="ADMIN\QuanLyChiTietDanhMuc2.aspx" />
+    <Content Include="ADMIN\QuanLyDanhMuc.aspx" />
+    <Content Include="ADMIN\QuanLyDuyetDVVC.aspx" />
+    <Content Include="ADMIN\QuanLyDVVC.aspx" />
+    <Content Include="ADMIN\QuanLyNCC.aspx" />
+    <Content Include="ADMIN\QuanLyNCCChiTiet.aspx" />
+    <Content Include="ADMIN\QuanLyNguoiDung.aspx" />
+    <Content Include="ADMIN\QuanLyNguoiDungChiTiet.aspx" />
+    <Content Include="ADMIN\QuanLyThemAdmin.aspx" />
+    <Content Include="ADMIN\QuanLyThemDanhMuc.aspx" />
+    <Content Include="ADMIN\QuanLyThemDVVC.aspx" />
+    <Content Include="ADMIN\QuanLyThemNguoiDung.aspx" />
+    <Content Include="ADMIN\QuanLyThongKe.aspx" />
+    <Content Include="ADMIN\QuanLyThuNhap.aspx" />
+    <Content Include="ADMIN\QuanLyXoaDanhMuc.aspx" />
+    <Content Include="ADMIN\QuanLyXoaDVVC.aspx" />
+    <Content Include="App_Data\ETech_Data.mdf" />
+    <Content Include="App_Data\ETech_Data_log.ldf">
+      <DependentUpon>ETech_Data.mdf</DependentUpon>
+    </Content>
+    <Content Include="bin\ETech.WebApp.dll" />
+    <Content Include="bin\ETech.WebApp.pdb" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\Microsoft.Win32.Primitives.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.Globalization.Calendars.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.ZipFile.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Net.Http.dll" />
+    <Content Include="bin\roslyn\System.Net.Sockets.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\SRVTextToImage.dll" />
+    <Content Include="bin\WebApplication2.dll" />
+    <Content Include="KH\ChiTietDonHang.aspx" />
+    <Content Include="KH\DonHang.aspx" />
+    <Content Include="KH\GioHang.aspx" />
+    <Content Include="KH\MailActive.aspx" />
+    <Content Include="KH\MailActiveDone.aspx" />
+    <Content Include="KH\MasterPage.Master" />
+    <Content Include="KH\QuanLyTaiKhoan.aspx" />
+    <Content Include="KH\QuanLyThongTin.aspx" />
+    <Content Include="KH\SPTHEODANHMUC.aspx" />
+    <Content Include="KH\ThemGioHangThanhCong.aspx" />
+    <Content Include="KH\TrangChiTietSanPham.aspx" />
+    <Content Include="KH\TrangChu.aspx" />
+    <Content Include="KH\TrangDangKyDangNhapKH.aspx" />
+    <Content Include="KH\TrangDoiMatKhau.aspx" />
+    <Content Include="KH\TrangQuenMatKhau.aspx" />
+    <Content Include="KH\TrangResetPassword.aspx" />
+    <Content Include="KH\TrangTimKiemSanPham.aspx" />
+    <Content Include="NCC\CaptchaImage.aspx" />
+    <Content Include="NCC\DangKyDangNhapNCC.aspx" />
+    <Content Include="NCC\DuyetDonHang.aspx" />
+    <Content Include="NCC\MailActive.aspx" />
+    <Content Include="NCC\MailActiveDone.aspx" />
+    <Content Include="NCC\QuanLyDonHang.aspx" />
+    <Content Include="NCC\QuanLyHoSo.aspx" />
+    <Content Include="NCC\QuanLyKhachHang.aspx" />
+    <Content Include="NCC\QuanLyKhachHangChiTiet.aspx" />
+    <Content Include="NCC\QuanLyKhuyenMai.aspx" />
+    <Content Include="NCC\QuanLyKhuyenMaiChiTiet.aspx" />
+    <Content Include="NCC\QuanLySanPham.aspx" />
+    <Content Include="NCC\QuanLySanPhamChiTiet.aspx" />
+    <Content Include="NCC\QuanLyThongKe.aspx" />
+    <Content Include="NCC\QuanLyXoaDM.aspx" />
+    <Content Include="NCC\ThemSanPhamChiTiet.aspx" />
+    <Content Include="NCC\TrangDoiMatKhau.aspx" />
+    <Content Include="NCC\TrangThemKhuyenMai.aspx" />
+    <Content Include="NCC\TrangXoaKhuyenMai.aspx" />
+    <Content Include="NCC\Xacnhanthanhctoan.aspx" />
+    <Content Include="NCC\YeuCauDanhMuc.aspx" />
+    <Content Include="NCC\YeuCauVanChuyen.aspx" />
+    <Content Include="Onepay\vpc_dr.aspx" />
+    <Content Include="Onepay\vpc_dr_quocte.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="wwwroot\css\admin.css" />
+    <Content Include="wwwroot\css\kh_donhang.css" />
+    <Content Include="wwwroot\css\kh_giohang.css" />
+    <Content Include="wwwroot\css\kh_masterpage.css" />
+    <Content Include="wwwroot\css\nhacungcap.css" />
+    <Content Include="wwwroot\font-awsome\attribution.js" />
+    <Content Include="wwwroot\font-awsome\css\all.css" />
+    <Content Include="wwwroot\font-awsome\css\all.min.css" />
+    <Content Include="wwwroot\font-awsome\css\brands.css" />
+    <Content Include="wwwroot\font-awsome\css\brands.min.css" />
+    <Content Include="wwwroot\font-awsome\css\fontawesome.css" />
+    <Content Include="wwwroot\font-awsome\css\fontawesome.min.css" />
+    <Content Include="wwwroot\font-awsome\css\regular.css" />
+    <Content Include="wwwroot\font-awsome\css\regular.min.css" />
+    <Content Include="wwwroot\font-awsome\css\solid.css" />
+    <Content Include="wwwroot\font-awsome\css\solid.min.css" />
+    <Content Include="wwwroot\font-awsome\css\svg-with-js.css" />
+    <Content Include="wwwroot\font-awsome\css\svg-with-js.min.css" />
+    <Content Include="wwwroot\font-awsome\css\v4-shims.css" />
+    <Content Include="wwwroot\font-awsome\css\v4-shims.min.css" />
+    <Content Include="wwwroot\font-awsome\js\all.js" />
+    <Content Include="wwwroot\font-awsome\js\all.min.js" />
+    <Content Include="wwwroot\font-awsome\js\brands.js" />
+    <Content Include="wwwroot\font-awsome\js\brands.min.js" />
+    <Content Include="wwwroot\font-awsome\js\conflict-detection.js" />
+    <Content Include="wwwroot\font-awsome\js\conflict-detection.min.js" />
+    <Content Include="wwwroot\font-awsome\js\fontawesome.js" />
+    <Content Include="wwwroot\font-awsome\js\fontawesome.min.js" />
+    <Content Include="wwwroot\font-awsome\js\regular.js" />
+    <Content Include="wwwroot\font-awsome\js\regular.min.js" />
+    <Content Include="wwwroot\font-awsome\js\solid.js" />
+    <Content Include="wwwroot\font-awsome\js\solid.min.js" />
+    <Content Include="wwwroot\font-awsome\js\v4-shims.js" />
+    <Content Include="wwwroot\font-awsome\js\v4-shims.min.js" />
+    <Content Include="wwwroot\font-awsome\LICENSE.txt" />
+    <Content Include="wwwroot\font-awsome\sprites\brands.svg" />
+    <Content Include="wwwroot\font-awsome\sprites\regular.svg" />
+    <Content Include="wwwroot\font-awsome\sprites\solid.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\500px.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\accessible-icon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\accusoft.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\acquisitions-incorporated.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\adn.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\adversal.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\affiliatetheme.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\airbnb.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\algolia.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\alipay.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\amazon-pay.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\amazon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\amilia.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\android.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\angellist.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\angrycreative.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\angular.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\app-store-ios.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\app-store.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\apper.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\apple-pay.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\apple.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\artstation.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\asymmetrik.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\atlassian.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\audible.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\autoprefixer.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\avianex.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\aviato.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\aws.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\bandcamp.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\battle-net.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\behance-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\behance.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\bimobject.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\bitbucket.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\bitcoin.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\bity.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\black-tie.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\blackberry.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\blogger-b.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\blogger.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\bluetooth-b.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\bluetooth.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\bootstrap.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\btc.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\buffer.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\buromobelexperte.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\buy-n-large.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\buysellads.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\canadian-maple-leaf.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cc-amazon-pay.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cc-amex.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cc-apple-pay.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cc-diners-club.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cc-discover.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cc-jcb.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cc-mastercard.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cc-paypal.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cc-stripe.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cc-visa.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\centercode.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\centos.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\chrome.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\chromecast.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cloudflare.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cloudscale.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cloudsmith.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cloudversify.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\codepen.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\codiepie.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\confluence.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\connectdevelop.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\contao.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cotton-bureau.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cpanel.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\creative-commons-by.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\creative-commons-nc-eu.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\creative-commons-nc-jp.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\creative-commons-nc.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\creative-commons-nd.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\creative-commons-pd-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\creative-commons-pd.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\creative-commons-remix.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\creative-commons-sa.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\creative-commons-sampling-plus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\creative-commons-sampling.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\creative-commons-share.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\creative-commons-zero.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\creative-commons.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\critical-role.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\css3-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\css3.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\cuttlefish.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\d-and-d-beyond.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\d-and-d.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\dailymotion.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\dashcube.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\deezer.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\delicious.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\deploydog.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\deskpro.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\dev.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\deviantart.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\dhl.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\diaspora.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\digg.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\digital-ocean.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\discord.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\discourse.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\dochub.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\docker.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\draft2digital.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\dribbble-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\dribbble.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\dropbox.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\drupal.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\dyalog.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\earlybirds.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\ebay.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\edge-legacy.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\edge.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\elementor.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\ello.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\ember.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\empire.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\envira.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\erlang.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\ethereum.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\etsy.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\evernote.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\expeditedssl.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\facebook-f.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\facebook-messenger.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\facebook-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\facebook.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\fantasy-flight-games.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\fedex.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\fedora.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\figma.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\firefox-browser.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\firefox.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\first-order-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\first-order.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\firstdraft.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\flickr.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\flipboard.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\fly.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\font-awesome-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\font-awesome-flag.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\font-awesome-logo-full.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\font-awesome.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\fonticons-fi.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\fonticons.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\fort-awesome-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\fort-awesome.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\forumbee.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\foursquare.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\free-code-camp.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\freebsd.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\fulcrum.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\galactic-republic.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\galactic-senate.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\get-pocket.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\gg-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\gg.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\git-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\git-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\git.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\github-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\github-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\github.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\gitkraken.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\gitlab.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\gitter.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\glide-g.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\glide.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\gofore.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\goodreads-g.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\goodreads.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\google-drive.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\google-pay.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\google-play.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\google-plus-g.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\google-plus-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\google-plus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\google-wallet.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\google.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\gratipay.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\grav.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\gripfire.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\grunt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\guilded.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\gulp.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\hacker-news-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\hacker-news.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\hackerrank.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\hips.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\hire-a-helper.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\hive.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\hooli.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\hornbill.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\hotjar.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\houzz.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\html5.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\hubspot.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\ideal.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\imdb.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\innosoft.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\instagram-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\instagram.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\instalod.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\intercom.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\internet-explorer.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\invision.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\ioxhost.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\itch-io.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\itunes-note.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\itunes.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\java.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\jedi-order.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\jenkins.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\jira.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\joget.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\joomla.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\js-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\js.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\jsfiddle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\kaggle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\keybase.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\keycdn.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\kickstarter-k.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\kickstarter.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\korvue.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\laravel.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\lastfm-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\lastfm.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\leanpub.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\less.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\line.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\linkedin-in.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\linkedin.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\linode.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\linux.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\lyft.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\magento.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\mailchimp.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\mandalorian.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\markdown.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\mastodon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\maxcdn.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\mdb.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\medapps.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\medium-m.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\medium.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\medrt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\meetup.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\megaport.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\mendeley.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\microblog.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\microsoft.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\mix.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\mixcloud.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\mixer.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\mizuni.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\modx.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\monero.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\napster.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\neos.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\nimblr.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\node-js.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\node.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\npm.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\ns8.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\nutritionix.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\octopus-deploy.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\odnoklassniki-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\odnoklassniki.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\old-republic.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\opencart.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\openid.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\opera.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\optin-monster.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\orcid.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\osi.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\page4.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\pagelines.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\palfed.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\patreon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\paypal.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\penny-arcade.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\perbyte.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\periscope.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\phabricator.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\phoenix-framework.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\phoenix-squadron.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\php.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\pied-piper-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\pied-piper-hat.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\pied-piper-pp.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\pied-piper-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\pied-piper.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\pinterest-p.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\pinterest-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\pinterest.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\playstation.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\product-hunt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\pushed.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\python.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\qq.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\quinscape.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\quora.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\r-project.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\raspberry-pi.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\ravelry.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\react.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\reacteurope.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\readme.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\rebel.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\red-river.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\reddit-alien.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\reddit-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\reddit.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\redhat.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\renren.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\replyd.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\researchgate.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\resolving.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\rev.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\rocketchat.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\rockrms.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\rust.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\safari.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\salesforce.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\sass.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\schlix.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\scribd.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\searchengin.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\sellcast.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\sellsy.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\servicestack.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\shirtsinbulk.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\shopify.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\shopware.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\simplybuilt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\sistrix.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\sith.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\sketch.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\skyatlas.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\skype.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\slack-hash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\slack.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\slideshare.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\snapchat-ghost.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\snapchat-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\snapchat.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\soundcloud.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\sourcetree.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\speakap.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\speaker-deck.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\spotify.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\squarespace.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\stack-exchange.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\stack-overflow.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\stackpath.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\staylinked.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\steam-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\steam-symbol.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\steam.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\sticker-mule.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\strava.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\stripe-s.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\stripe.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\studiovinari.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\stumbleupon-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\stumbleupon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\superpowers.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\supple.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\suse.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\swift.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\symfony.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\teamspeak.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\telegram-plane.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\telegram.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\tencent-weibo.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\the-red-yeti.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\themeco.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\themeisle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\think-peaks.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\tiktok.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\trade-federation.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\trello.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\tumblr-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\tumblr.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\twitch.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\twitter-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\twitter.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\typo3.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\uber.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\ubuntu.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\uikit.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\umbraco.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\uncharted.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\uniregistry.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\unity.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\unsplash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\untappd.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\ups.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\usb.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\usps.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\ussunnah.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\vaadin.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\viacoin.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\viadeo-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\viadeo.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\viber.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\vimeo-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\vimeo-v.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\vimeo.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\vine.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\vk.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\vnv.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\vuejs.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\watchman-monitoring.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\waze.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\weebly.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\weibo.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\weixin.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\whatsapp-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\whatsapp.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\whmcs.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\wikipedia-w.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\windows.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\wix.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\wizards-of-the-coast.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\wodu.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\wolf-pack-battalion.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\wordpress-simple.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\wordpress.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\wpbeginner.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\wpexplorer.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\wpforms.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\wpressr.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\xbox.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\xing-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\xing.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\y-combinator.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\yahoo.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\yammer.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\yandex-international.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\yandex.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\yarn.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\yelp.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\yoast.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\youtube-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\youtube.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\brands\zhihu.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\address-book.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\address-card.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\angry.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\arrow-alt-circle-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\arrow-alt-circle-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\arrow-alt-circle-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\arrow-alt-circle-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\bell-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\bell.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\bookmark.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\building.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\calendar-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\calendar-check.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\calendar-minus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\calendar-plus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\calendar-times.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\calendar.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\caret-square-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\caret-square-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\caret-square-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\caret-square-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\chart-bar.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\check-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\check-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\clipboard.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\clock.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\clone.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\closed-captioning.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\comment-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\comment-dots.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\comment.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\comments.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\compass.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\copy.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\copyright.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\credit-card.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\dizzy.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\dot-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\edit.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\envelope-open.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\envelope.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\eye-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\eye.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\file-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\file-archive.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\file-audio.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\file-code.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\file-excel.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\file-image.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\file-pdf.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\file-powerpoint.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\file-video.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\file-word.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\file.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\flag.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\flushed.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\folder-open.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\folder.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\font-awesome-logo-full.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\frown-open.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\frown.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\futbol.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\gem.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\grimace.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\grin-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\grin-beam-sweat.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\grin-beam.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\grin-hearts.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\grin-squint-tears.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\grin-squint.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\grin-stars.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\grin-tears.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\grin-tongue-squint.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\grin-tongue-wink.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\grin-tongue.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\grin-wink.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\grin.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\hand-lizard.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\hand-paper.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\hand-peace.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\hand-point-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\hand-point-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\hand-point-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\hand-point-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\hand-pointer.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\hand-rock.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\hand-scissors.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\hand-spock.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\handshake.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\hdd.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\heart.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\hospital.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\hourglass.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\id-badge.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\id-card.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\image.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\images.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\keyboard.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\kiss-beam.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\kiss-wink-heart.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\kiss.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\laugh-beam.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\laugh-squint.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\laugh-wink.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\laugh.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\lemon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\life-ring.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\lightbulb.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\list-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\map.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\meh-blank.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\meh-rolling-eyes.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\meh.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\minus-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\money-bill-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\moon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\newspaper.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\object-group.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\object-ungroup.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\paper-plane.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\pause-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\play-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\plus-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\question-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\registered.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\sad-cry.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\sad-tear.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\save.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\share-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\smile-beam.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\smile-wink.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\smile.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\snowflake.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\star-half.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\star.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\sticky-note.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\stop-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\sun.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\surprise.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\thumbs-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\thumbs-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\times-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\tired.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\trash-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\user-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\user.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\window-close.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\window-maximize.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\window-minimize.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\regular\window-restore.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ad.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\address-book.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\address-card.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\adjust.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\air-freshener.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\align-center.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\align-justify.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\align-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\align-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\allergies.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ambulance.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\american-sign-language-interpreting.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\anchor.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\angle-double-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\angle-double-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\angle-double-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\angle-double-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\angle-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\angle-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\angle-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\angle-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\angry.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ankh.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\apple-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\archive.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\archway.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\arrow-alt-circle-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\arrow-alt-circle-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\arrow-alt-circle-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\arrow-alt-circle-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\arrow-circle-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\arrow-circle-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\arrow-circle-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\arrow-circle-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\arrow-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\arrow-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\arrow-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\arrow-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\arrows-alt-h.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\arrows-alt-v.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\arrows-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\assistive-listening-systems.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\asterisk.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\at.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\atlas.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\atom.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\audio-description.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\award.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\baby-carriage.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\baby.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\backspace.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\backward.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bacon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bacteria.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bacterium.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bahai.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\balance-scale-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\balance-scale-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\balance-scale.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ban.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\band-aid.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\barcode.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bars.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\baseball-ball.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\basketball-ball.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bath.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\battery-empty.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\battery-full.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\battery-half.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\battery-quarter.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\battery-three-quarters.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bed.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\beer.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bell-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bell.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bezier-curve.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bible.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bicycle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\biking.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\binoculars.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\biohazard.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\birthday-cake.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\blender-phone.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\blender.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\blind.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\blog.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bold.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bolt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bomb.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bone.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bong.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\book-dead.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\book-medical.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\book-open.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\book-reader.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\book.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bookmark.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\border-all.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\border-none.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\border-style.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bowling-ball.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\box-open.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\box-tissue.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\box.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\boxes.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\braille.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\brain.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bread-slice.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\briefcase-medical.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\briefcase.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\broadcast-tower.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\broom.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\brush.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bug.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\building.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bullhorn.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bullseye.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\burn.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bus-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\bus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\business-time.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\calculator.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\calendar-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\calendar-check.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\calendar-day.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\calendar-minus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\calendar-plus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\calendar-times.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\calendar-week.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\calendar.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\camera-retro.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\camera.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\campground.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\candy-cane.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cannabis.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\capsules.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\car-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\car-battery.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\car-crash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\car-side.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\car.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\caravan.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\caret-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\caret-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\caret-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\caret-square-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\caret-square-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\caret-square-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\caret-square-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\caret-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\carrot.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cart-arrow-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cart-plus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cash-register.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cat.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\certificate.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chair.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chalkboard-teacher.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chalkboard.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\charging-station.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chart-area.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chart-bar.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chart-line.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chart-pie.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\check-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\check-double.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\check-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\check.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cheese.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chess-bishop.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chess-board.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chess-king.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chess-knight.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chess-pawn.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chess-queen.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chess-rook.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chess.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chevron-circle-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chevron-circle-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chevron-circle-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chevron-circle-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chevron-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chevron-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chevron-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\chevron-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\child.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\church.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\circle-notch.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\city.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\clinic-medical.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\clipboard-check.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\clipboard-list.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\clipboard.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\clock.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\clone.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\closed-captioning.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cloud-download-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cloud-meatball.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cloud-moon-rain.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cloud-moon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cloud-rain.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cloud-showers-heavy.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cloud-sun-rain.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cloud-sun.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cloud-upload-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cloud.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cocktail.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\code-branch.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\code.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\coffee.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cog.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cogs.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\coins.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\columns.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\comment-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\comment-dollar.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\comment-dots.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\comment-medical.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\comment-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\comment.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\comments-dollar.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\comments.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\compact-disc.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\compass.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\compress-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\compress-arrows-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\compress.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\concierge-bell.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cookie-bite.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cookie.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\copy.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\copyright.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\couch.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\credit-card.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\crop-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\crop.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cross.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\crosshairs.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\crow.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\crown.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\crutch.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cube.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cubes.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\cut.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\database.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\deaf.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\democrat.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\desktop.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dharmachakra.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\diagnoses.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dice-d20.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dice-d6.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dice-five.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dice-four.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dice-one.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dice-six.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dice-three.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dice-two.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dice.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\digital-tachograph.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\directions.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\disease.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\divide.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dizzy.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dna.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dog.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dollar-sign.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dolly-flatbed.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dolly.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\donate.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\door-closed.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\door-open.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dot-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dove.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\download.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\drafting-compass.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dragon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\draw-polygon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\drum-steelpan.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\drum.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\drumstick-bite.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dumbbell.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dumpster-fire.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dumpster.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\dungeon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\edit.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\egg.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\eject.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ellipsis-h.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ellipsis-v.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\envelope-open-text.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\envelope-open.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\envelope-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\envelope.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\equals.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\eraser.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ethernet.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\euro-sign.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\exchange-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\exclamation-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\exclamation-triangle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\exclamation.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\expand-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\expand-arrows-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\expand.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\external-link-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\external-link-square-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\eye-dropper.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\eye-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\eye.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\fan.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\fast-backward.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\fast-forward.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\faucet.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\fax.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\feather-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\feather.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\female.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\fighter-jet.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-archive.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-audio.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-code.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-contract.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-csv.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-download.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-excel.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-export.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-image.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-import.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-invoice-dollar.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-invoice.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-medical-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-medical.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-pdf.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-powerpoint.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-prescription.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-signature.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-upload.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-video.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file-word.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\file.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\fill-drip.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\fill.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\film.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\filter.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\fingerprint.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\fire-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\fire-extinguisher.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\fire.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\first-aid.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\fish.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\fist-raised.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\flag-checkered.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\flag-usa.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\flag.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\flask.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\flushed.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\folder-minus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\folder-open.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\folder-plus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\folder.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\font-awesome-logo-full.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\font.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\football-ball.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\forward.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\frog.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\frown-open.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\frown.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\funnel-dollar.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\futbol.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\gamepad.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\gas-pump.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\gavel.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\gem.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\genderless.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ghost.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\gift.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\gifts.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\glass-cheers.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\glass-martini-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\glass-martini.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\glass-whiskey.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\glasses.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\globe-africa.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\globe-americas.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\globe-asia.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\globe-europe.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\globe.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\golf-ball.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\gopuram.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\graduation-cap.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\greater-than-equal.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\greater-than.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grimace.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grin-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grin-beam-sweat.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grin-beam.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grin-hearts.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grin-squint-tears.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grin-squint.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grin-stars.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grin-tears.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grin-tongue-squint.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grin-tongue-wink.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grin-tongue.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grin-wink.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grin.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grip-horizontal.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grip-lines-vertical.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grip-lines.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\grip-vertical.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\guitar.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\h-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hamburger.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hammer.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hamsa.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-holding-heart.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-holding-medical.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-holding-usd.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-holding-water.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-holding.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-lizard.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-middle-finger.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-paper.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-peace.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-point-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-point-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-point-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-point-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-pointer.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-rock.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-scissors.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-sparkles.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hand-spock.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hands-helping.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hands-wash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hands.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\handshake-alt-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\handshake-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\handshake.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hanukiah.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hard-hat.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hashtag.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hat-cowboy-side.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hat-cowboy.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hat-wizard.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hdd.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\head-side-cough-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\head-side-cough.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\head-side-mask.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\head-side-virus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\heading.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\headphones-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\headphones.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\headset.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\heart-broken.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\heart.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\heartbeat.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\helicopter.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\highlighter.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hiking.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hippo.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\history.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hockey-puck.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\holly-berry.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\home.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\horse-head.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\horse.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hospital-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hospital-symbol.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hospital-user.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hospital.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hot-tub.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hotdog.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hotel.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hourglass-end.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hourglass-half.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hourglass-start.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hourglass.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\house-damage.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\house-user.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\hryvnia.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\i-cursor.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ice-cream.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\icicles.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\icons.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\id-badge.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\id-card-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\id-card.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\igloo.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\image.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\images.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\inbox.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\indent.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\industry.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\infinity.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\info-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\info.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\italic.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\jedi.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\joint.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\journal-whills.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\kaaba.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\key.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\keyboard.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\khanda.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\kiss-beam.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\kiss-wink-heart.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\kiss.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\kiwi-bird.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\landmark.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\language.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\laptop-code.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\laptop-house.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\laptop-medical.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\laptop.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\laugh-beam.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\laugh-squint.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\laugh-wink.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\laugh.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\layer-group.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\leaf.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\lemon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\less-than-equal.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\less-than.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\level-down-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\level-up-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\life-ring.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\lightbulb.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\link.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\lira-sign.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\list-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\list-ol.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\list-ul.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\list.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\location-arrow.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\lock-open.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\lock.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\long-arrow-alt-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\long-arrow-alt-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\long-arrow-alt-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\long-arrow-alt-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\low-vision.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\luggage-cart.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\lungs-virus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\lungs.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\magic.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\magnet.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mail-bulk.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\male.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\map-marked-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\map-marked.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\map-marker-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\map-marker.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\map-pin.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\map-signs.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\map.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\marker.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mars-double.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mars-stroke-h.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mars-stroke-v.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mars-stroke.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mars.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mask.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\medal.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\medkit.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\meh-blank.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\meh-rolling-eyes.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\meh.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\memory.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\menorah.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mercury.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\meteor.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\microchip.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\microphone-alt-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\microphone-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\microphone-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\microphone.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\microscope.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\minus-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\minus-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\minus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mitten.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mobile-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mobile.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\money-bill-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\money-bill-wave-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\money-bill-wave.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\money-bill.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\money-check-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\money-check.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\monument.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\moon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mortar-pestle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mosque.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\motorcycle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mountain.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mouse-pointer.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mouse.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\mug-hot.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\music.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\network-wired.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\neuter.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\newspaper.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\not-equal.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\notes-medical.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\object-group.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\object-ungroup.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\oil-can.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\om.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\otter.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\outdent.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pager.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\paint-brush.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\paint-roller.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\palette.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pallet.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\paper-plane.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\paperclip.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\parachute-box.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\paragraph.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\parking.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\passport.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pastafarianism.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\paste.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pause-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pause.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\paw.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\peace.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pen-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pen-fancy.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pen-nib.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pen-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pen.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pencil-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pencil-ruler.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\people-arrows.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\people-carry.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pepper-hot.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\percent.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\percentage.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\person-booth.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\phone-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\phone-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\phone-square-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\phone-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\phone-volume.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\phone.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\photo-video.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\piggy-bank.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pills.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pizza-slice.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\place-of-worship.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\plane-arrival.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\plane-departure.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\plane-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\plane.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\play-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\play.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\plug.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\plus-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\plus-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\plus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\podcast.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\poll-h.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\poll.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\poo-storm.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\poo.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\poop.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\portrait.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pound-sign.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\power-off.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pray.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\praying-hands.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\prescription-bottle-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\prescription-bottle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\prescription.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\print.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\procedures.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\project-diagram.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pump-medical.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\pump-soap.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\puzzle-piece.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\qrcode.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\question-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\question.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\quidditch.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\quote-left.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\quote-right.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\quran.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\radiation-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\radiation.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\rainbow.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\random.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\receipt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\record-vinyl.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\recycle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\redo-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\redo.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\registered.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\remove-format.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\reply-all.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\reply.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\republican.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\restroom.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\retweet.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ribbon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ring.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\road.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\robot.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\rocket.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\route.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\rss-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\rss.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ruble-sign.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ruler-combined.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ruler-horizontal.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ruler-vertical.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ruler.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\running.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\rupee-sign.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sad-cry.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sad-tear.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\satellite-dish.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\satellite.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\save.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\school.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\screwdriver.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\scroll.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sd-card.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\search-dollar.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\search-location.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\search-minus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\search-plus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\search.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\seedling.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\server.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\shapes.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\share-alt-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\share-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\share-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\share.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\shekel-sign.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\shield-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\shield-virus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ship.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\shipping-fast.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\shoe-prints.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\shopping-bag.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\shopping-basket.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\shopping-cart.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\shower.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\shuttle-van.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sign-in-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sign-language.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sign-out-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sign.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\signal.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\signature.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sim-card.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sink.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sitemap.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\skating.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\skiing-nordic.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\skiing.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\skull-crossbones.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\skull.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sleigh.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sliders-h.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\smile-beam.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\smile-wink.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\smile.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\smog.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\smoking-ban.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\smoking.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sms.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\snowboarding.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\snowflake.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\snowman.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\snowplow.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\soap.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\socks.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\solar-panel.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sort-alpha-down-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sort-alpha-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sort-alpha-up-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sort-alpha-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sort-amount-down-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sort-amount-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sort-amount-up-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sort-amount-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sort-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sort-numeric-down-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sort-numeric-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sort-numeric-up-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sort-numeric-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sort-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sort.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\spa.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\space-shuttle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\spell-check.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\spider.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\spinner.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\splotch.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\spray-can.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\square-full.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\square-root-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\stamp.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\star-and-crescent.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\star-half-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\star-half.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\star-of-david.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\star-of-life.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\star.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\step-backward.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\step-forward.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\stethoscope.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sticky-note.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\stop-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\stop.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\stopwatch-20.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\stopwatch.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\store-alt-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\store-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\store-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\store.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\stream.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\street-view.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\strikethrough.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\stroopwafel.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\subscript.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\subway.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\suitcase-rolling.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\suitcase.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sun.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\superscript.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\surprise.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\swatchbook.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\swimmer.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\swimming-pool.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\synagogue.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sync-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\sync.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\syringe.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\table-tennis.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\table.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tablet-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tablet.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tablets.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tachometer-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tag.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tags.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tape.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tasks.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\taxi.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\teeth-open.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\teeth.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\temperature-high.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\temperature-low.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tenge.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\terminal.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\text-height.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\text-width.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\th-large.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\th-list.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\th.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\theater-masks.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\thermometer-empty.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\thermometer-full.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\thermometer-half.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\thermometer-quarter.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\thermometer-three-quarters.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\thermometer.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\thumbs-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\thumbs-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\thumbtack.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\ticket-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\times-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\times.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tint-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tint.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tired.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\toggle-off.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\toggle-on.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\toilet-paper-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\toilet-paper.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\toilet.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\toolbox.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tools.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tooth.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\torah.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\torii-gate.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tractor.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\trademark.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\traffic-light.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\trailer.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\train.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tram.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\transgender-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\transgender.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\trash-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\trash-restore-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\trash-restore.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\trash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tree.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\trophy.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\truck-loading.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\truck-monster.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\truck-moving.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\truck-pickup.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\truck.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tshirt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tty.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\tv.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\umbrella-beach.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\umbrella.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\underline.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\undo-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\undo.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\universal-access.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\university.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\unlink.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\unlock-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\unlock.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\upload.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-alt-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-astronaut.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-check.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-circle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-clock.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-cog.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-edit.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-friends.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-graduate.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-injured.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-lock.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-md.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-minus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-ninja.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-nurse.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-plus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-secret.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-shield.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-tag.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-tie.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user-times.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\user.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\users-cog.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\users-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\users.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\utensil-spoon.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\utensils.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\vector-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\venus-double.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\venus-mars.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\venus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\vest-patches.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\vest.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\vial.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\vials.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\video-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\video.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\vihara.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\virus-slash.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\virus.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\viruses.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\voicemail.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\volleyball-ball.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\volume-down.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\volume-mute.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\volume-off.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\volume-up.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\vote-yea.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\vr-cardboard.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\walking.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\wallet.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\warehouse.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\water.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\wave-square.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\weight-hanging.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\weight.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\wheelchair.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\wifi.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\wind.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\window-close.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\window-maximize.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\window-minimize.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\window-restore.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\wine-bottle.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\wine-glass-alt.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\wine-glass.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\won-sign.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\wrench.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\x-ray.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\yen-sign.svg" />
+    <Content Include="wwwroot\font-awsome\svgs\solid\yin-yang.svg" />
+    <Content Include="wwwroot\font-awsome\webfonts\fa-brands-400.svg" />
+    <Content Include="wwwroot\font-awsome\webfonts\fa-regular-400.svg" />
+    <Content Include="wwwroot\font-awsome\webfonts\fa-solid-900.svg" />
+    <Content Include="wwwroot\img\icon\apple.png" />
+    <Content Include="wwwroot\img\icon\avatar.svg" />
+    <Content Include="wwwroot\img\icon\background.svg" />
+    <Content Include="wwwroot\img\icon\BG_SIN_kh.svg" />
+    <Content Include="wwwroot\img\icon\BG_SIN_ncc.svg" />
+    <Content Include="wwwroot\img\icon\BG_SUP_kh.svg" />
+    <Content Include="wwwroot\img\icon\BG_SUP_ncc.svg" />
+    <Content Include="wwwroot\img\icon\cashless-payment.png" />
+    <Content Include="wwwroot\img\icon\customer-service.png" />
+    <Content Include="wwwroot\img\icon\earth.png" />
+    <Content Include="wwwroot\img\icon\logo.png" />
+    <Content Include="wwwroot\img\icon\logo_text.png" />
+    <Content Include="wwwroot\img\icon\shipping.png" />
+    <Content Include="wwwroot\img\icon\wave.png" />
+    <Content Include="wwwroot\img\sp\acer-1.jpg" />
+    <Content Include="wwwroot\img\sp\acer-2.jpg" />
+    <Content Include="wwwroot\img\sp\apple-watch-1.jpg" />
+    <Content Include="wwwroot\img\sp\apple-watch-2.jpg" />
+    <Content Include="wwwroot\img\sp\apple-watch-3.jpg" />
+    <Content Include="wwwroot\img\sp\apple-watch-4.jpg" />
+    <Content Include="wwwroot\img\sp\apple-watch-5.jpg" />
+    <Content Include="wwwroot\img\sp\apple-watch-6.jpg" />
+    <Content Include="wwwroot\img\sp\asus-1.jpg" />
+    <Content Include="wwwroot\img\sp\asus-2.jpg" />
+    <Content Include="wwwroot\img\sp\dell-14.jpg" />
+    <Content Include="wwwroot\img\sp\icon-phone.png" />
+    <Content Include="wwwroot\img\sp\manhinh-1.jpg" />
+    <Content Include="wwwroot\img\sp\manhinh-2.jpg" />
+    <Content Include="wwwroot\img\sp\manhinh-3.jpg" />
+    <Content Include="wwwroot\img\sp\manhinh-4.jpg" />
+    <Content Include="wwwroot\img\sp\testimg.jpg" />
+    <Content Include="wwwroot\img\sp\tải xuống %282%29.jpg" />
+    <Content Include="wwwroot\js\admin.js" />
+    <Content Include="wwwroot\js\nhacungcap.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADMIN\CaptchaImage.aspx.cs">
+      <DependentUpon>CaptchaImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\CaptchaImage.aspx.designer.cs">
+      <DependentUpon>CaptchaImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\DangNhap.aspx.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\DangNhap.aspx.designer.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+    </Compile>
+    <Content Include="App_Code\DataAccess.cs" />
+    <Compile Include="ADMIN\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLiCapNhatDanhMuc.aspx.cs">
+      <DependentUpon>QuanLiCapNhatDanhMuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLiCapNhatDanhMuc.aspx.designer.cs">
+      <DependentUpon>QuanLiCapNhatDanhMuc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyAdmin.aspx.cs">
+      <DependentUpon>QuanLyAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyAdmin.aspx.designer.cs">
+      <DependentUpon>QuanLyAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyAdminChiTiet.aspx.cs">
+      <DependentUpon>QuanLyAdminChiTiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyAdminChiTiet.aspx.designer.cs">
+      <DependentUpon>QuanLyAdminChiTiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyCapNhatDVVC.aspx.cs">
+      <DependentUpon>QuanLyCapNhatDVVC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyCapNhatDVVC.aspx.designer.cs">
+      <DependentUpon>QuanLyCapNhatDVVC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyChiTietDanhMuc1.aspx.cs">
+      <DependentUpon>QuanLyChiTietDanhMuc1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyChiTietDanhMuc1.aspx.designer.cs">
+      <DependentUpon>QuanLyChiTietDanhMuc1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyChiTietDanhMuc2.aspx.cs">
+      <DependentUpon>QuanLyChiTietDanhMuc2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyChiTietDanhMuc2.aspx.designer.cs">
+      <DependentUpon>QuanLyChiTietDanhMuc2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyDanhMuc.aspx.cs">
+      <DependentUpon>QuanLyDanhMuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyDanhMuc.aspx.designer.cs">
+      <DependentUpon>QuanLyDanhMuc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyDuyetDVVC.aspx.cs">
+      <DependentUpon>QuanLyDuyetDVVC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyDuyetDVVC.aspx.designer.cs">
+      <DependentUpon>QuanLyDuyetDVVC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyDVVC.aspx.cs">
+      <DependentUpon>QuanLyDVVC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyDVVC.aspx.designer.cs">
+      <DependentUpon>QuanLyDVVC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyNCC.aspx.cs">
+      <DependentUpon>QuanLyNCC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyNCC.aspx.designer.cs">
+      <DependentUpon>QuanLyNCC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyNCCChiTiet.aspx.cs">
+      <DependentUpon>QuanLyNCCChiTiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyNCCChiTiet.aspx.designer.cs">
+      <DependentUpon>QuanLyNCCChiTiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyNguoiDung.aspx.cs">
+      <DependentUpon>QuanLyNguoiDung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyNguoiDung.aspx.designer.cs">
+      <DependentUpon>QuanLyNguoiDung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyNguoiDungChiTiet.aspx.cs">
+      <DependentUpon>QuanLyNguoiDungChiTiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyNguoiDungChiTiet.aspx.designer.cs">
+      <DependentUpon>QuanLyNguoiDungChiTiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyThemAdmin.aspx.cs">
+      <DependentUpon>QuanLyThemAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyThemAdmin.aspx.designer.cs">
+      <DependentUpon>QuanLyThemAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyThemDanhMuc.aspx.cs">
+      <DependentUpon>QuanLyThemDanhMuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyThemDanhMuc.aspx.designer.cs">
+      <DependentUpon>QuanLyThemDanhMuc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyThemDVVC.aspx.cs">
+      <DependentUpon>QuanLyThemDVVC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyThemDVVC.aspx.designer.cs">
+      <DependentUpon>QuanLyThemDVVC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyThemNguoiDung.aspx.cs">
+      <DependentUpon>QuanLyThemNguoiDung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyThemNguoiDung.aspx.designer.cs">
+      <DependentUpon>QuanLyThemNguoiDung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyThongKe.aspx.cs">
+      <DependentUpon>QuanLyThongKe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyThongKe.aspx.designer.cs">
+      <DependentUpon>QuanLyThongKe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyThuNhap.aspx.cs">
+      <DependentUpon>QuanLyThuNhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyThuNhap.aspx.designer.cs">
+      <DependentUpon>QuanLyThuNhap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyXoaDanhMuc.aspx.cs">
+      <DependentUpon>QuanLyXoaDanhMuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyXoaDanhMuc.aspx.designer.cs">
+      <DependentUpon>QuanLyXoaDanhMuc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyXoaDVVC.aspx.cs">
+      <DependentUpon>QuanLyXoaDVVC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\QuanLyXoaDVVC.aspx.designer.cs">
+      <DependentUpon>QuanLyXoaDVVC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\DataAccess.cs" />
+    <Compile Include="Class_onepay\OnepayCode.cs" />
+    <Compile Include="Class_onepay\OnepayQuocTeCode.cs" />
+    <Compile Include="KH\ChiTietDonHang.aspx.cs">
+      <DependentUpon>ChiTietDonHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\ChiTietDonHang.aspx.designer.cs">
+      <DependentUpon>ChiTietDonHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\DonHang.aspx.cs">
+      <DependentUpon>DonHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\DonHang.aspx.designer.cs">
+      <DependentUpon>DonHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\GioHang.aspx.cs">
+      <DependentUpon>GioHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\GioHang.aspx.designer.cs">
+      <DependentUpon>GioHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\MailActive.aspx.cs">
+      <DependentUpon>MailActive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\MailActive.aspx.designer.cs">
+      <DependentUpon>MailActive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\MailActiveDone.aspx.cs">
+      <DependentUpon>MailActiveDone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\MailActiveDone.aspx.designer.cs">
+      <DependentUpon>MailActiveDone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="KH\QuanLyTaiKhoan.aspx.cs">
+      <DependentUpon>QuanLyTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\QuanLyTaiKhoan.aspx.designer.cs">
+      <DependentUpon>QuanLyTaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\QuanLyThongTin.aspx.cs">
+      <DependentUpon>QuanLyThongTin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\QuanLyThongTin.aspx.designer.cs">
+      <DependentUpon>QuanLyThongTin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\SPTHEODANHMUC.aspx.cs">
+      <DependentUpon>SPTHEODANHMUC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\SPTHEODANHMUC.aspx.designer.cs">
+      <DependentUpon>SPTHEODANHMUC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\ThemGioHangThanhCong.aspx.cs">
+      <DependentUpon>ThemGioHangThanhCong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\ThemGioHangThanhCong.aspx.designer.cs">
+      <DependentUpon>ThemGioHangThanhCong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\TrangChiTietSanPham.aspx.cs">
+      <DependentUpon>TrangChiTietSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\TrangChiTietSanPham.aspx.designer.cs">
+      <DependentUpon>TrangChiTietSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\TrangChu.aspx.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\TrangChu.aspx.designer.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\TrangDangKyDangNhapKH.aspx.cs">
+      <DependentUpon>TrangDangKyDangNhapKH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\TrangDangKyDangNhapKH.aspx.designer.cs">
+      <DependentUpon>TrangDangKyDangNhapKH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\TrangDoiMatKhau.aspx.cs">
+      <DependentUpon>TrangDoiMatKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\TrangDoiMatKhau.aspx.designer.cs">
+      <DependentUpon>TrangDoiMatKhau.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\TrangQuenMatKhau.aspx.cs">
+      <DependentUpon>TrangQuenMatKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\TrangQuenMatKhau.aspx.designer.cs">
+      <DependentUpon>TrangQuenMatKhau.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\TrangResetPassword.aspx.cs">
+      <DependentUpon>TrangResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\TrangResetPassword.aspx.designer.cs">
+      <DependentUpon>TrangResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\TrangTimKiemSanPham.aspx.cs">
+      <DependentUpon>TrangTimKiemSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\TrangTimKiemSanPham.aspx.designer.cs">
+      <DependentUpon>TrangTimKiemSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\CaptchaImage.aspx.cs">
+      <DependentUpon>CaptchaImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\CaptchaImage.aspx.designer.cs">
+      <DependentUpon>CaptchaImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\DangKyDangNhapNCC.aspx.cs">
+      <DependentUpon>DangKyDangNhapNCC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\DangKyDangNhapNCC.aspx.designer.cs">
+      <DependentUpon>DangKyDangNhapNCC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\DuyetDonHang.aspx.cs">
+      <DependentUpon>DuyetDonHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\DuyetDonHang.aspx.designer.cs">
+      <DependentUpon>DuyetDonHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\MailActive.aspx.cs">
+      <DependentUpon>MailActive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\MailActive.aspx.designer.cs">
+      <DependentUpon>MailActive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\MailActiveDone.aspx.cs">
+      <DependentUpon>MailActiveDone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\MailActiveDone.aspx.designer.cs">
+      <DependentUpon>MailActiveDone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\QuanLyDonHang.aspx.cs">
+      <DependentUpon>QuanLyDonHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\QuanLyDonHang.aspx.designer.cs">
+      <DependentUpon>QuanLyDonHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\QuanLyHoSo.aspx.cs">
+      <DependentUpon>QuanLyHoSo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\QuanLyHoSo.aspx.designer.cs">
+      <DependentUpon>QuanLyHoSo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\QuanLyKhachHang.aspx.cs">
+      <DependentUpon>QuanLyKhachHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\QuanLyKhachHang.aspx.designer.cs">
+      <DependentUpon>QuanLyKhachHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\QuanLyKhachHangChiTiet.aspx.cs">
+      <DependentUpon>QuanLyKhachHangChiTiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\QuanLyKhachHangChiTiet.aspx.designer.cs">
+      <DependentUpon>QuanLyKhachHangChiTiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\QuanLyKhuyenMai.aspx.cs">
+      <DependentUpon>QuanLyKhuyenMai.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\QuanLyKhuyenMai.aspx.designer.cs">
+      <DependentUpon>QuanLyKhuyenMai.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\QuanLyKhuyenMaiChiTiet.aspx.cs">
+      <DependentUpon>QuanLyKhuyenMaiChiTiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\QuanLyKhuyenMaiChiTiet.aspx.designer.cs">
+      <DependentUpon>QuanLyKhuyenMaiChiTiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\QuanLySanPham.aspx.cs">
+      <DependentUpon>QuanLySanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\QuanLySanPham.aspx.designer.cs">
+      <DependentUpon>QuanLySanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\QuanLySanPhamChiTiet.aspx.cs">
+      <DependentUpon>QuanLySanPhamChiTiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\QuanLySanPhamChiTiet.aspx.designer.cs">
+      <DependentUpon>QuanLySanPhamChiTiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\QuanLyThongKe.aspx.cs">
+      <DependentUpon>QuanLyThongKe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\QuanLyThongKe.aspx.designer.cs">
+      <DependentUpon>QuanLyThongKe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\QuanLyXoaDM.aspx.cs">
+      <DependentUpon>QuanLyXoaDM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\QuanLyXoaDM.aspx.designer.cs">
+      <DependentUpon>QuanLyXoaDM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\ThemSanPhamChiTiet.aspx.cs">
+      <DependentUpon>ThemSanPhamChiTiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\ThemSanPhamChiTiet.aspx.designer.cs">
+      <DependentUpon>ThemSanPhamChiTiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\TrangDoiMatKhau.aspx.cs">
+      <DependentUpon>TrangDoiMatKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\TrangDoiMatKhau.aspx.designer.cs">
+      <DependentUpon>TrangDoiMatKhau.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\TrangThemKhuyenMai.aspx.cs">
+      <DependentUpon>TrangThemKhuyenMai.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\TrangThemKhuyenMai.aspx.designer.cs">
+      <DependentUpon>TrangThemKhuyenMai.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\TrangXoaKhuyenMai.aspx.cs">
+      <DependentUpon>TrangXoaKhuyenMai.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\TrangXoaKhuyenMai.aspx.designer.cs">
+      <DependentUpon>TrangXoaKhuyenMai.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\Xacnhanthanhctoan.aspx.cs">
+      <DependentUpon>Xacnhanthanhctoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\Xacnhanthanhctoan.aspx.designer.cs">
+      <DependentUpon>Xacnhanthanhctoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\YeuCauDanhMuc.aspx.cs">
+      <DependentUpon>YeuCauDanhMuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\YeuCauDanhMuc.aspx.designer.cs">
+      <DependentUpon>YeuCauDanhMuc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCC\YeuCauVanChuyen.aspx.cs">
+      <DependentUpon>YeuCauVanChuyen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCC\YeuCauVanChuyen.aspx.designer.cs">
+      <DependentUpon>YeuCauVanChuyen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Onepay\vpc_dr.aspx.cs">
+      <DependentUpon>vpc_dr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Onepay\vpc_dr_quocte.aspx.cs">
+      <DependentUpon>vpc_dr_quocte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NCC\MasterPage.Master" />
+    <Content Include="ADMIN\MasterPage.Master" />
+    <Content Include="bin\ETech.WebApp.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="wwwroot\font-awsome\less\brands.less" />
+    <Content Include="wwwroot\font-awsome\less\fontawesome.less" />
+    <Content Include="wwwroot\font-awsome\less\regular.less" />
+    <Content Include="wwwroot\font-awsome\less\solid.less" />
+    <Content Include="wwwroot\font-awsome\less\v4-shims.less" />
+    <Content Include="wwwroot\font-awsome\less\_animated.less" />
+    <Content Include="wwwroot\font-awsome\less\_bordered-pulled.less" />
+    <Content Include="wwwroot\font-awsome\less\_core.less" />
+    <Content Include="wwwroot\font-awsome\less\_fixed-width.less" />
+    <Content Include="wwwroot\font-awsome\less\_icons.less" />
+    <Content Include="wwwroot\font-awsome\less\_larger.less" />
+    <Content Include="wwwroot\font-awsome\less\_list.less" />
+    <Content Include="wwwroot\font-awsome\less\_mixins.less" />
+    <Content Include="wwwroot\font-awsome\less\_rotated-flipped.less" />
+    <Content Include="wwwroot\font-awsome\less\_screen-reader.less" />
+    <Content Include="wwwroot\font-awsome\less\_shims.less" />
+    <Content Include="wwwroot\font-awsome\less\_stacked.less" />
+    <Content Include="wwwroot\font-awsome\less\_variables.less" />
+    <Content Include="wwwroot\font-awsome\metadata\categories.yml" />
+    <Content Include="wwwroot\font-awsome\metadata\icons.json" />
+    <Content Include="wwwroot\font-awsome\metadata\icons.yml" />
+    <Content Include="wwwroot\font-awsome\metadata\shims.json" />
+    <Content Include="wwwroot\font-awsome\metadata\shims.yml" />
+    <Content Include="wwwroot\font-awsome\metadata\sponsors.yml" />
+    <Content Include="wwwroot\font-awsome\scss\brands.scss" />
+    <Content Include="wwwroot\font-awsome\scss\fontawesome.scss" />
+    <Content Include="wwwroot\font-awsome\scss\regular.scss" />
+    <Content Include="wwwroot\font-awsome\scss\solid.scss" />
+    <Content Include="wwwroot\font-awsome\scss\v4-shims.scss" />
+    <Content Include="wwwroot\font-awsome\scss\_animated.scss" />
+    <Content Include="wwwroot\font-awsome\scss\_bordered-pulled.scss" />
+    <Content Include="wwwroot\font-awsome\scss\_core.scss" />
+    <Content Include="wwwroot\font-awsome\scss\_fixed-width.scss" />
+    <Content Include="wwwroot\font-awsome\scss\_icons.scss" />
+    <Content Include="wwwroot\font-awsome\scss\_larger.scss" />
+    <Content Include="wwwroot\font-awsome\scss\_list.scss" />
+    <Content Include="wwwroot\font-awsome\scss\_mixins.scss" />
+    <Content Include="wwwroot\font-awsome\scss\_rotated-flipped.scss" />
+    <Content Include="wwwroot\font-awsome\scss\_screen-reader.scss" />
+    <Content Include="wwwroot\font-awsome\scss\_shims.scss" />
+    <Content Include="wwwroot\font-awsome\scss\_stacked.scss" />
+    <Content Include="wwwroot\font-awsome\scss\_variables.scss" />
+    <Content Include="wwwroot\font-awsome\webfonts\fa-brands-400.eot" />
+    <Content Include="wwwroot\font-awsome\webfonts\fa-brands-400.ttf" />
+    <Content Include="wwwroot\font-awsome\webfonts\fa-brands-400.woff" />
+    <Content Include="wwwroot\font-awsome\webfonts\fa-brands-400.woff2" />
+    <Content Include="wwwroot\font-awsome\webfonts\fa-regular-400.eot" />
+    <Content Include="wwwroot\font-awsome\webfonts\fa-regular-400.ttf" />
+    <Content Include="wwwroot\font-awsome\webfonts\fa-regular-400.woff" />
+    <Content Include="wwwroot\font-awsome\webfonts\fa-regular-400.woff2" />
+    <Content Include="wwwroot\font-awsome\webfonts\fa-solid-900.eot" />
+    <Content Include="wwwroot\font-awsome\webfonts\fa-solid-900.ttf" />
+    <Content Include="wwwroot\font-awsome\webfonts\fa-solid-900.woff" />
+    <Content Include="wwwroot\font-awsome\webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Connected Services\" />
+    <Folder Include="wwwroot\font\" />
+    <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61690</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44303/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
